@@ -8,7 +8,8 @@
 import UIKit
 import Parse
 import AlamofireImage
-
+import Alamofire
+ 
  class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
@@ -17,6 +18,8 @@ import AlamofireImage
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DataRequest.addAcceptableImageContentTypes(["application/octet-stream"])
         
         tableView.delegate = self
         tableView.dataSource = self
